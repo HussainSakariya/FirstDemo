@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+        {% block content %}
+        {% for i in obj %}
+            {% if i.no > 102 %}
+                {{i.no}}
+            {% endif %}
+        {% endfor %}
+        {{request}}
+        <form action="second/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="no">
+            <input type="text" name="name">
+            <input type="text" name="age">
+            <input type="submit" name="submit" value="submit">        
+        </form>
+    {% endblock content %}    
+
+
